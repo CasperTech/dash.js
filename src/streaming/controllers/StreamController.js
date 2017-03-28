@@ -314,6 +314,9 @@ function StreamController() {
             mediaSource.removeEventListener('sourceopen', onMediaSourceOpen);
             mediaSource.removeEventListener('webkitsourceopen', onMediaSourceOpen);
             setMediaDuration();
+            if (isNaN(seekTime)) {
+                seekTime = 0.0;
+            }
             activateStream(seekTime);
         }
 
